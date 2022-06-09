@@ -40,3 +40,4 @@ jobs:
         healthcheck: https://murmuring-sierra-69706.herokuapp.com/health
         checkstring: ok
         rollbackonhealthcheckfailed: true
+        
