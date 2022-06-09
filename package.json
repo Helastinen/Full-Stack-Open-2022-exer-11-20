@@ -8,6 +8,7 @@
     "start": "node index.js",
     "start:full": "node index.js && cd ./frontend/ && npm start",
     "dev": "nodemon index.js",
+    "build": "cd ./frontend/ && npm run build",
     "build:ui": "rm -rf build && cd ./frontend/ && npm run build",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
