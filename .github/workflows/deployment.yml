@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
 
 jobs:
   deployment:
@@ -21,10 +24,14 @@ jobs:
     - name: npm install frontend
       run: npm run install:fe
 
+    - name: lint
+      run: npm run lint
+
     - name: build frontend
       run: npm run build:ui
     
     - name: deploy to Heroku
+      if: ${{ github.event_name == 'push' }}
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
         heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
@@ -33,4 +40,3 @@ jobs:
         healthcheck: https://murmuring-sierra-69706.herokuapp.com/health
         checkstring: ok
         rollbackonhealthcheckfailed: true
-        
