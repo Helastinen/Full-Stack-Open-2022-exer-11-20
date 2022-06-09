@@ -18,8 +18,8 @@ jobs:
     - name: npm install
       run: npm install
 
-    - name: build
-      run: npm run build
+    - name: build frontend
+      run: npm run build:ui
     
     - name: deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12

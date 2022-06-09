@@ -1,13 +1,13 @@
 {
-  "name": "full-stack-open-2022-part3-backend",
+  "name": "full-stack-open-2022-part11-backend",
   "version": "0.0.1",
-  "description": "exercises for Full Stack Open 2022 part 3",
+  "description": "exercise 11.20.",
   "main": "index.js",
   "scripts": {
     "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build:ui": "rm -rf build && cd ../frontend-part3/ && npm run build && cp -r build ../backend.part3",
+    "build:ui": "rm -rf build && cd ./frontend/ && npm run build",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail",
