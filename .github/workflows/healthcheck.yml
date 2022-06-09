@@ -1,0 +1,18 @@
+name: App healthcheck
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  URL_healthcheck:
+    runs-on: ubuntu-20.04 
+    steps:
+      - name: URL Health Check
+        uses: Jtalk/url-health-check-action@v2.2
+        with:
+          url: https://murmuring-sierra-69706.herokuapp.com/
+          follow-redirect: false
+          max-attempts: 3
+          retry-delay: 5s
+          retry-all: false

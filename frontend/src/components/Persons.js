@@ -3,7 +3,7 @@ const PersonForm = ({ addPerson, newName, handleNewName, newNumber, handleNewNum
     <>
       <form onSubmit={addPerson}>
         <div>
-          name: <input value={newName} onChange={handleNewName} />
+          name MODIFIED: <input value={newName} onChange={handleNewName} />
         </div>
         <div>
           number: <input value={newNumber} onChange={handleNewNumber} />
