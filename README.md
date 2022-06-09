@@ -1,2 +1,5 @@
-# Full-Stack-Open-2022-exer-11-20
-Repo for FSO 2022 exercise 11.20
+# Full-Stack-Open-2022-Part3
+Exercises for https://fullstackopen.com/ course part 3
+
+# Phonebook application in Heroku
+The Phonebook app can be found here https://murmuring-sierra-69706.herokuapp.com/
