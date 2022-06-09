@@ -15,8 +15,11 @@ jobs:
       with:
         node-version: '16'
     
-    - name: npm install
+    - name: npm install backend
       run: npm install
+
+    - name: npm install frontend
+      run: npm run install:fe
 
     - name: build frontend
       run: npm run build:ui
