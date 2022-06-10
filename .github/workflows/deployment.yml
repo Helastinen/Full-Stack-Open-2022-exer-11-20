@@ -29,6 +29,9 @@ jobs:
 
     - name: build frontend
       run: npm run build:ui
+    
+    - name: unit tests
+      run: npm run test
 
     - name: e2e tests
       uses: cypress-io/github-action@v2
