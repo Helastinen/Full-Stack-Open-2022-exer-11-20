@@ -31,7 +31,11 @@ jobs:
       run: npm run build:ui
 
     - name: e2e tests
-      run: npm run test:e2e
+      uses: cypress-io/github-action@v2
+      with:
+        command: npm run test:e2e
+        start: npm run start
+        wait-on: http://localhost:3001
 
     - name: commit messages
       env:
