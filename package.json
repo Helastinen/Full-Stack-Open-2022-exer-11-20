@@ -11,7 +11,9 @@
     "build:ui": "rm -rf build && cd ./frontend/ && npm run build",
     "logs:prod": "heroku logs --tail",
     "lint": "eslint .",
-    "install:fe": "cd ./frontend/ && npm install"
+    "install:fe": "cd ./frontend/ && npm install",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "cypress": "^10.0.3",
     "eslint": "^8.12.0",
     "nodemon": "^2.0.15"
   }
