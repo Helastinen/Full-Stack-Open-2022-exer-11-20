@@ -40,3 +40,19 @@ jobs:
         healthcheck: https://murmuring-sierra-69706.herokuapp.com/health
         checkstring: ok
         rollbackonhealthcheckfailed: true
+
+  tag_release:
+    needs: [deployment]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+      
+      - name: bump version and push tag
+        if: ${{ github.event_name == 'push' }}
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          With_V: true
+          DEFAULT_BUMP: patch
